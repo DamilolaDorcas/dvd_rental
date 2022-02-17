@@ -1,7 +1,7 @@
 --10 top cutomers, their emails,full names,address. 
 --we use the payment and customer table
 
-{{ config(materialized = 'table') }}
+--{{ config(materialized = 'table') }}
 with payment as(
 select payment_id, customer_id, amount from payment),
 customer as(
