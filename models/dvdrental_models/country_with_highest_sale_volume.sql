@@ -57,7 +57,7 @@ final as(
     customer_base
     from all_col
     group by 1, 2,3
-    order by 3 desc
+    order by 2, 3 desc
     
     )
 select * from final
