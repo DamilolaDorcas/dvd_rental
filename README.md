@@ -17,8 +17,14 @@ This includes the address, city and country the customers are from, limited to j
 
 2. Give a report of rental performance. How many films were returned late, early and on time?
 
+The number of films that was returned late is pretty high. 6586 DVDs were returned late, 7738 were returned early while just 1720 were returned on time. This could be to some reasons which includes the closeness of the store to the customer's houses, weather, covid lockdown.
+
+
 3: What are the top rented (highest in demand) genres of film and what are their total sales?
 
 Sports category is the highest in demand in all the genre available. This is to inform the rental agency to make sure they don't run out of sports category DVDs. Followed by sports is sci-fi and animation category.
 
+
 4: Identify the countries where CrossBorder Films had the highest volume of sales along-side the countries where they had the largest customer base.
+
+They had the highest volume of trade in India, followed by Japan and their customer base is much in these areas
