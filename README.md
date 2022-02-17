@@ -1,8 +1,11 @@
-Welcome to your new dbt project!
+DVD Rental Analysis
 
-### Using the starter project
 
-Try running the following commands:
+This project is a part of an attempt to get familiar with the use of dbt and postgres database
+
+
+
+To try this out, try running the following commands:
 - dbt run
 - dbt test
 
