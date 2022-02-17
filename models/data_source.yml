@@ -1,0 +1,157 @@
+version: 2
+
+sources:
+   - name: public
+     description: A dvd rental database.
+     database: dvdrental
+     tables:
+        - name: address
+          description: address data.
+          columns:
+            - name: address_id
+              description: primary key for address
+              tests:
+                - unique
+                - not_null
+
+        - name: actor
+          description: actor data.
+          columns:
+            - name: actor_id
+              description: primary key for actor
+              tests:
+                - unique
+                - not_null
+
+          
+        - name: category
+          description: category data.
+          columns:
+            - name: category_id
+              description: primary key for category
+              tests:
+                - unique
+                - not_null
+
+
+ 
+        - name: city
+          description: city data.
+          columns:
+            - name: city_id
+              description: primary key for city
+              tests:
+                - unique
+                - not_null
+
+
+        - name: country
+          description: country data.
+          columns:
+            - name: country_id
+              description: primary key for country
+              tests:
+                - unique
+                - not_null
+
+
+
+        - name: customer
+          description: customer data.
+          columns:
+            - name: customer_id
+              description: primary key for customer
+              tests:
+                - unique
+                - not_null
+
+
+        - name: film
+          description: film data.
+          columns:
+            - name: film_id
+              description: primary key for film
+              tests:
+                - unique
+                - not_null
+
+        
+        - name: film_actor
+          description: film_actor data.
+          columns:
+            - name: actor_id
+              description: primary key for film_actor
+              tests:
+                - unique
+                - not_null
+      
+
+        - name: film_category
+          description: film_category data.
+          columns:
+            - name: film_id
+              description: primary key for film_category
+              tests:
+                - unique
+                - not_null       
+
+
+        - name: inventory
+          description: inventory data.
+          columns:
+            - name: inventory_id
+              description: primary key for inventory
+              tests:
+                - unique
+                - not_null
+
+
+
+        - name: language
+          description: language data.
+          columns:
+            - name: language_id
+              description: primary key for language
+              tests:
+                - unique
+                - not_null
+
+
+        - name: payment
+          description: payment data.
+          columns:
+            - name: payment_id
+              description: primary key for payment
+              tests:
+                - unique
+                - not_null
+        
+  
+        - name: rental
+          description: rental data.
+          columns:
+            - name: rental _id
+              description: primary key for rental 
+              tests:
+                - unique
+                - not_null
+
+
+        - name: staff
+          description: staff data.
+          columns:
+            - name: staff_id
+              description: primary key for staff
+              tests:
+                - unique
+                - not_null
+
+
+        - name: store
+          description: store data.
+          columns:
+            - name: store_id
+              description: primary key for store
+              tests:
+                - unique
+                - not_null
