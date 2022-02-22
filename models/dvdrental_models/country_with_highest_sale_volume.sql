@@ -4,7 +4,7 @@ with country as(
     select 
     country_id,
     country
-    from country
+    from {{ source('public', 'country') }}
 ),
 
 city as(
@@ -12,21 +12,21 @@ city as(
     city_id,
     country_id,
     city
-    from city
+    from {{ source('public', 'city') }}
 ),
 
 address as(
     SELECT
     address_id,
     city_id
-    from address
+    from {{ source('public', 'address') }}
 ),
 
 customer as(
     SELECT
     customer_id,
     address_id
-    from customer
+    from {{ source('public', 'customer') }}
 ),
 
 payment as(
@@ -34,10 +34,10 @@ payment as(
     payment_id,
     customer_id,
     amount
-    from payment
+    from {{ source('public', 'payment') }}
 ),
 
-all_col as(
+highest_sales_vol as(
     SELECT
     country, 
     sum(amount) as vol_of_sales,
@@ -55,7 +55,7 @@ final as(
     country,
     vol_of_sales,
     customer_base
-    from all_col
+    from highest_sales_vol
     group by 1, 2,3
     order by 2, 3 desc
     
