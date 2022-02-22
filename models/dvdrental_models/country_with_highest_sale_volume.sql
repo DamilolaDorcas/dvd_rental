@@ -10,8 +10,7 @@ with country as(
 city as(
     SELECT
     city_id,
-    country_id,
-    city
+    country_id
     from {{ source('public', 'city') }}
 ),
 
@@ -61,4 +60,3 @@ final as(
     
     )
 select * from final
-group by 1, 2,3

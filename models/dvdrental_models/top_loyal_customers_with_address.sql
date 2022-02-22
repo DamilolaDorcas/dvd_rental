@@ -1,13 +1,11 @@
 --10 top cutomers, their emails,full names,address. 
 --we used the payment,address and customer table
 
---{{ config(materialized = 'table') }}
 with payment as(
 select 
-	payment_id, 
 	customer_id, 
 	amount 
-	from payment
+	from  {{ source('public', 'payment') }}
 ),
 
 customer as(
@@ -17,7 +15,7 @@ select
 	address_id, 
 	email,  
 	customer_id 
-	from customer
+	from  {{ source('public', 'customer') }}
 ),
 
 address as(
@@ -26,7 +24,7 @@ address as(
 	address,
 	district,
 	city_id
-	from address
+	from  {{ source('public', 'address') }}
 ),
 
 city as(
@@ -34,21 +32,20 @@ city as(
 	city_id,
 	city,
 	country_id
-	from city
+	from  {{ source('public', 'city') }}
 ),
 
 country as(
 	select
 	country_id,
 	country
-	from country
+	from  {{ source('public', 'country') }}
 ),
-all_col as(
+loyal_customer as(
 select 
 	concat(first_name, ' ', last_name) as full_name,
 	concat(address, ', ', city, ', ', country) as customer_address,
 	customer_id, 
-	payment_id, 
 	amount,
 	address,
 	address_id
@@ -69,7 +66,7 @@ select
 	customer_address, 
 	--address_id,
 	sum(amount) as customer_payment 
-	from all_col
+	from loyal_customer
 	group by 1, 2
 	order by customer_payment desc
 )
