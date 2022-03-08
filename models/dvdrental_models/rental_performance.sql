@@ -17,8 +17,7 @@ rental as(
 	return_date, 
 	inventory_id from rental
 ),
-
-all_col as(
+rental_performance as(
 select title, 
 	rental_duration, 
 	extract('day' from return_date-rental_date) as rent_diff
@@ -37,7 +36,7 @@ return as(
 	when rent_diff = rental_duration then 'film returned on time'
 	else 'film returned late'
 	end as return
-	from all_col
+	from rental_performance
 ),
 
 return_time as(
